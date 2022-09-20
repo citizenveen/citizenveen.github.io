@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krieg admin</title>
+  <link rel="stylesheet" href="./admin.css">
+
+</head>
+<body>
+  <main>
+
+    <section id="play-overview">
+      <h3>Click on a time to alter the play's settings</h3>
+    </section>
+    <section style="display:none;">
+      <h3>Alter time / date / location details</h3>
+      <input placeholder="time" data-key="time" type="time" oninput="_handleInput(this)">
+      <input placeholder="date" data-key="date" type="date" oninput="_handleInput(this)">
+      <input placeholder="location" data-key="loc" type="text" oninput="_handleInput(this)">
+      <button onclick="_handleDateLocationUpdate(this)">Update values</button>
+    </section>
+
+    
+    <section style="display:none;">
+      <h3>Alter dream state content and show/hide it</h3>
+      <textarea placeholder="Dream state content" data-key="containerContent" type="text" oninput="_handleInput(this)"></textarea>
+      <button onclick="_handleContainerContentUpdate(this)">Update values</button>
+      <button onclick="_showContainer()">Show dream state</button>
+      <button onclick="_hideContainer()">Hide dream state</button>
+    </section>
+    
+    
+    <section style="display:none;">
+      <h3>Show or hide the links in the current passage</h3>
+      <button onclick="_hidePassageLinks()">Hide current passage links</button>
+      <button onclick="_showPassageLinks()">Show current passage links</button>
+    </section>
+
+    <section style="display:none;">
+      <h3>Alter the reading speed. 834ch/min is average for English readers</h3>
+      <p>Once updated the speed is changed for all passages</p>
+      <input placeholder="Characters per minute" value="834" data-key="charactersPerMinute" type="number" oninput="_handleInput(this)">
+      <button onclick="_setCharsPerMinute()">Set character per minute for story</button>
+    </section>
+
+
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
