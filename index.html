@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <base target="_blank">
+    </head>
 <body>
-    <a href="krieg/index.html">Krieg</a>
+    <h1 class="collapsible">Krieg</h1>
+    <p class="content">
+        Krieg is a text-based original game prototype created under the Innovation:Lab project at Theater Utrecht, written by me. Please set your browser to full screen before playing.
+        <br> <a href="krieg/index.html">Click here to play KRIEG</a>
+    </p>
+    
+    <h1 class="collapsible">Horizon: zd rewrite</h1>
+    <p class="content"></p>
+    <h1 class="collapsible">Disco elysium sc?</h1>
+    <p class="content"></p>
+    <h1 class="collapsible">CWF + WDOB</h1>
+    <p class="content"></p>
+    <h1 class="collapsible">Other skills</h1>
+    <p class="content"></p>
+    <h1 class="collapsible">CV</h1>
+    <p class="content"></p>
+    
+    
+    <style>
+        .collapsible {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        }
+
+        
+        .active, .collapsible:hover {
+        background-color: #ccc;
+        }
+
+        
+        .content {
+        padding: 22px 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        margin: 0 10px 25px 10px;
+        }
+
+    </style>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+            }
+        });
+        } 
+    </script>
 </body>
 </html> 
