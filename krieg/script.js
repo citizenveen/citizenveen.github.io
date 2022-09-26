@@ -9,7 +9,6 @@ const config = {
   charactersPerMinute: 863
 }
 
-
 // SETUP elements
 let autoplayTimeout;
 let passageName = '';
@@ -310,3 +309,42 @@ const observer = new MutationObserver(callback);
 // Start observing the target node for configured mutations
 observer.observe(mutationObsTargetNode, mutationObsConfig);
 
+// Playing audio
+var song = new Audio();
+var playlist = ["Bohren Der Club of Gore - Im Rauch.mp4",
+"Midnight Radio Track 1.mp4",
+"Jóhann Jóhannsson - The Miners Hymns - The Cause Of Labour Is The Hope Of The World.mp4",
+"Ryuichi Sakamoto - Train Ride 2.mp4",
+"Bohren Der Club of Gore - Constant Fear.mp4"];
+
+var currentSong = -1;
+
+function nextSong() {
+  currentSong++;
+  if (currentSong > playlist.length-1) {
+    currentSong = 0;
+  }
+  song.src = `music/${playlist[currentSong]}`
+  song.play();
+}
+
+//autoplay next song when song finishes:
+song.onended = function() {
+  nextSong()
+}
+
+//most browsers prevent autoplay before user has interacted, so we add a listener for first click
+window.addEventListener("click", () => {
+  nextSong()
+
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+    document.documentElement.msRequestFullscreen();
+  }
+
+}, {once: true});
+
+alert("Please turn on your sound. Click the 'KRIEG' logo to start game. Music will start and browser will go to fullscreen.")
