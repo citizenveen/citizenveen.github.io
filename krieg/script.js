@@ -347,4 +347,4 @@ window.addEventListener("click", () => {
 
 }, {once: true});
 
-alert("Please turn on your sound. Click the 'KRIEG' logo to start game. Music will start and browser will go to fullscreen.")
+alert("Please turn on your sound. Click anywhere on the screen to start the game. Your browser will go to full screen automatically when you start.")
