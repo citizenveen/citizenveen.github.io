@@ -18,9 +18,9 @@
             <br> <a href="krieg/index.html">Click here to play KRIEG</a>
         </p>
         
-        <h3 class="collapsible"><img class="arrow" src="arrow.png"></img> Rewriting <i>Horizon:Zero Dawn</i></h3>
+        <h3 class="collapsible"><img class="arrow" src="arrow.png"></img> Rewriting <i>Horizon: Zero Dawn</i></h3>
         <p class="content">
-            Horizon: Zero Dawn is a 2017 PlayStation action/adventure role playing game. It's a good game, gameplay is fun, original concept, it has a very well-build, detailed, convincing world. The backstory, utter destruction of no less than all life on earth 1000 years before the story of the game takes place, although somewhat grotesque is actually quite convincing and gives a lot of depth to the world.
+            <i>Horizon: Zero Dawn</i> is a 2017 PlayStation action/adventure role playing game. It's a good game, gameplay is fun, original concept, it has a very well-build, detailed, convincing world. The backstory, utter destruction of no less than all life on earth 1000 years before the story of the game takes place, although somewhat grotesque is actually quite convincing and gives a lot of depth to the world.
             <br> The story of the characters of the game within that setting though, is mediocre at best. What it is missing are central elements of classic story writing: interesting and multi-layered characters, a main-character arc that reflects on the values of the world and most importantly, a meaningful conflict. Also, on this wobbly base, the game has difficulties building convincing dialogue. The massive amount of dialogue is represented in awkward choose-your-next-question-style conversation, where characters mostly just explain their inner motives tete-a-tete.
             <br>
             <br> So, both to showcase my writing skills, and the potential of the setting. I decided to rewrite it's story to something more interesting. I also wrote a sample scene. I tried to keep as many elements of the world, characters and names intact, to show what difference just the actual story makes. Having played the game or knowing the original story helps a lot in reading my version.
@@ -29,6 +29,8 @@
             <br><a href="Rewriting Horizon\Story.pdf" target="_blank">Read the rewritten story of Horizon: Zero Dawn here</a>
             <br>
             <br>I also wrote a sample scene, <a href="Rewriting Horizon\Scene1.pdf" target="_blank">read it here.</a>
+            <br>
+            <br>All copyright of Horizon: Zero Dawn ofcourse lies with <a href="https://www.guerrilla-games.com/">Guerrilla Games</a>. 
         </p>
         <!-- <h3 class="collapsible"><img class="arrow" src="arrow.png"></img> Disco elysium sc?</h3>
         <p class="content"></p> -->
@@ -87,8 +89,15 @@
     
     
     <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
         body {
             font-family: Verdana, Helvetica, sans-serif;
+            background-color: rgb(238, 255, 242);
         }
 
         h1 {
@@ -97,7 +106,6 @@
         }
 
         .allContent {
-            width: 80vw;
             margin: auto 10vw auto 10vw;
         }
 
@@ -112,6 +120,7 @@
         text-align: left;
         outline: none;
         margin-bottom: 5px;
+        max-width: 100%;
         }
 
         .arrow {
@@ -161,6 +170,29 @@
             text-align: right;
         }
 
+        /*For mobile screens*/
+
+        @media only screen  
+        and (max-width: 480px) {
+
+            body {
+                font-size: 2em;
+            }
+
+            .allContent
+            {
+                margin: 0;
+            }
+
+            .collapsible {
+                margin: 0;
+            }
+
+            .content {
+                margin-bottom: 5px;
+            }
+
+        }
 
 
     </style>
@@ -177,7 +209,7 @@
                     content.style.padding = "0px 18px"
                 } else {
                     selectedImg.style.transform = 'rotate(540deg)'
-                    content.style.maxHeight = "500px";
+                    content.style.maxHeight = "10000px";
                     content.style.transitionTimingFunction = "ease-in";
                     content.style.padding = "22px 18px"
                 }
